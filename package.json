@@ -1,0 +1,21 @@
+{
+  "name": "snake",
+  "version": "0.0.0",
+  "description": "game snake",
+  "main": "index.js",
+  "scripts": {
+    "w": "watchify index.js -o bundle.js --debug",
+    "test": "exit 1",
+    "start": "http-server -p $VCAP_APP_PORT"
+  },
+  "dependencies": {
+    "domready": "^1.0.7",
+    "lodash": "^3.1.0"
+  },
+  "author": "spirin.vladimir@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.7.4",
+    "watchify": "^2.3.0"
+  }
+}
