@@ -2,7 +2,8 @@
 /*global window*/
 var domready = require('domready'),
     ex = require('./lib/excalibur'),
-    Snake = require('./lib/snake');
+    Snake = require('./lib/snake'),
+    mobile = require('./lib/mobile');
 
 domready(function () {
     'use strict';
@@ -58,6 +59,7 @@ domready(function () {
     document.addEventListener('click', function () {
         replay();
     });
+    mobile(snake);
     game.start();
     snake.onLose = replay;
     snake.run({x: 1});
