@@ -3,7 +3,8 @@
 var domready = require('domready'),
     ex = require('./lib/excalibur'),
     Snake = require('./lib/snake'),
-    mobile = require('./lib/mobile');
+    mobile = require('./lib/mobile'),
+    screenfull = require('screenfull');
 
 domready(function () {
     'use strict';
@@ -61,6 +62,9 @@ domready(function () {
         replay();
     });
     mobile(snake);
+    if (screenfull.enabled) {
+        screenfull.request();
+    }
     game.start();
     snake.onLose = replay;
     snake.run({x: 1});
