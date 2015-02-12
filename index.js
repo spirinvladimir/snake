@@ -21,6 +21,7 @@ domready(function () {
             game.rootScene.children.forEach(function (actor) {
                 actor.kill();
             });
+            document.title = '';
             setTimeout(function () {
                 snake = new Snake({
                     ex: ex,
