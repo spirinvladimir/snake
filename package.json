@@ -15,7 +15,6 @@
   "author": "spirin.vladimir@gmail.com",
   "license": "ISC",
   "devDependencies": {
-    "http-server": "^0.7.4",
     "watchify": "^2.3.0"
   }
 }
