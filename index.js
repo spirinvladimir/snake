@@ -3,7 +3,7 @@
 var domready = require('domready'),
     ex = require('./lib/excalibur'),
     Snake = require('./lib/snake'),
-    mobile = require('./lib/mobile'),
+    Mobile = require('./lib/mobile'),
     screenfull = require('screenfull');
 
 domready(function () {
@@ -17,6 +17,10 @@ domready(function () {
                 body: ex.Color.Yellow,
                 food: ex.Color.Green
             }
+        }),
+        mobile = new Mobile({
+            direction: 'right',
+            snake: snake
         }),
         replay = function () {
             game.rootScene.children.forEach(function (actor) {
@@ -35,6 +39,7 @@ domready(function () {
                 });
                 snake.onLose = replay;
                 snake.run({x: 1});
+                mobile.snake = snake;
             }, 500);
         },
         paused = false;
@@ -61,7 +66,6 @@ domready(function () {
     document.addEventListener('click', function () {
         replay();
     });
-    mobile(snake);
     if (screenfull.enabled) {
         screenfull.request();
     }
